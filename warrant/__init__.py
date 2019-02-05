@@ -31,6 +31,7 @@ def dict_to_cognito(attributes, attr_map=None):
     """
     if attr_map is None:
         attr_map = {}
+    attributes.update(attr_map)
     for k,v in attr_map.items():
         if v in attributes.keys():
             attributes[k] = attributes.pop(v)
